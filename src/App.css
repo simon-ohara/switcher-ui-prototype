@@ -1,3 +1,10 @@
+body {
+  background: rgba(61,38,76,1);
+  background: linear-gradient(160deg, rgba(61,38,76,1) 10%, rgba(19,60,58,1) 90%);
+}
+
+h1 { display: none; }
+
 .App {
   text-align: center;
 }
@@ -21,4 +28,43 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+svg g text {
+  font-size: 0.22em;
+  fill: white;
+  fill-opacity: 0.7;
+  transition: fill-opacity .5s;
+}
+
+.destination g:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.destination g {
+  opacity: 1;
+  transition: opacity .1s;
+}
+
+.destination g polygon {
+  fill: #00bff3;
+  stroke: #01a0cc;
+  stroke-width: 1.75;
+  stroke-linejoin: round;
+}
+
+.destination.has-source g polygon {
+  fill: #ec145b;
+  stroke: #c8114d;
+}
+
+.hide-destinations .hexagon {
+  transition: all 100ms ease-in;
+  transform: scale(1,0);
+}
+
+.show-destinations .hexagon {
+  transition: all 100ms ease-in;
+  transform: scale(1,1);
 }
